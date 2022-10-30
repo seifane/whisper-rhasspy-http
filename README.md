@@ -38,7 +38,7 @@ You can pass arguments to your docker run command in the same as you would usual
 
 Some intent recognition services might have troubles recognizing intents because Whisper adds punctuation to the recognized text.
 For example `What time is it ?` might not be recognized while `What time is it` will be. The `--filter-chars` argument is meant to be used in this case.
-You can specify a list of characters that will automatically get filtered out. A good example would be `--filter-chars ".?!'\":;<>[]{}()"`
+You can specify a list of characters that will automatically get filtered out. A good example would be `--filter-chars ".?'"\!\"":;<>[]{}()"`
 
 ## Build Docker Image
 Build the docker image
