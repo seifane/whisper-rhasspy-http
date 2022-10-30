@@ -1,4 +1,3 @@
-
 # Whisper Rhasspy HTTP  
   
 This project aims to provide a Whisper integration to Rhasspy. Currently, it is somewhat functional, can work on both CPU and GPU with the provided Dockerfile.
@@ -24,7 +23,7 @@ docker run --gpus all -p 4444:4444 tiemajor/whisper-rhasspy-http:latest
 
 ### Rhasspy setup
 
-On Rhasspy change your Speech To Text method to `Remote HTTP` and set the Speech to Text URL to `http://[IP]:[PORT]/api/text-to-speech`. Take care of replacing IP and PORT with actual values.
+On Rhasspy change your Speech To Text method to `Remote HTTP` and set the Speech to Text URL to `http://[IP]:[PORT]/api/speech-to-text`. Take care of replacing IP and PORT with actual values.
 
 ## Usage
 Arguments :
@@ -35,6 +34,8 @@ Arguments :
 - `--whisper-model` : Define what model should be used for Whisper possible values are `tiny`, `base`, `small`, `medium`, `large`; More info [here](https://github.com/openai/whisper#available-models-and-languages). Defaults to `base`
 
 You can pass arguments to your docker run command in the same as you would usually.
+
+## Recommendations
 
 Some intent recognition services might have troubles recognizing intents because Whisper adds punctuation to the recognized text.
 For example `What time is it ?` might not be recognized while `What time is it` will be. The `--filter-chars` argument is meant to be used in this case.

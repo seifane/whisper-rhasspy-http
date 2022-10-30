@@ -26,7 +26,8 @@ def clean_text(text: str) -> str:
         text = text.translate(dict.fromkeys(map(ord, args.filter_chars), None))
     return text
 
-@route('/api/text-to-speech', method='POST')
+
+@route('/api/speech-to-text', method='POST')
 def api_text_to_speech():
     data = request.body.read()
     filename = get_random_string(20) + ".wav"
